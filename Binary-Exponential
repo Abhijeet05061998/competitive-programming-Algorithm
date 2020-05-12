@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+long long binpow(long long a, long long b) {
+    if (b == 0)
+        return 1;
+    long long res=binpow(a,b /2);
+    if (b % 2)
+        return res*res*a;
+    else
+        return res*res;
+}
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long a,b;
+	    cin>>a>>b;
+	    
+	    long long ans=binpow(a,b);
+	    long long result=ans%10;
+	    
+	    cout<<result<<endl;
+	}
+	return 0;
+}
